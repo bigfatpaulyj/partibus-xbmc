@@ -1,0 +1,8 @@
+* partibus release 1
+** user account creation
+** pagination
+*** next/prev
+*** horizontal scroll bar   
+
+* useful info
+docs: http://orgmode.org/guide/Structure-editing.html#Structure-editing

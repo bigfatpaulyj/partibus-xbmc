@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block body %}
+<script>
+var clientIP = '{{clientIP}}';
+var baseUrl='{{baseurl}}';
+var djangoPath='{{path}}';
+var clientIP='{{clientIP}}';
+
+</script>
+
+{% load static %}
+<script type="text/javascript" src="{% get_static_prefix %}script/partibus.js"></script>
+<!--
+<div data-role="page" id="chooseserver">
+{% include "chooseserver.html" %}
+</div>-->
+
+<div data-role="page" id="account">
+{% include "account.html" %}
+</div>
+-->
+
+<div data-role="page" id="account">
+{% include "account.html" %}
+</div>
+
+<div data-role="page" id="library">
+{% include "page_content.html" %}
+</div>
+
+<div data-role="dialog" id="youtube" >
+{% include "youtube.html" %}
+</div>
+
+<div data-role="dialog" id="itemcontext" >
+{% include "itemcontext.html" %}
+</div>
+
+<div data-role="page" id="home">
+{% include "home.html" %}
+</div>
+
+
+{% include "serverconfig.html" %}
+
+{% endblock %}

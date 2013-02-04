@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<!-- Home -->
+<div data-role="page" id="page1">
+<div data-role="header" data-position="fixed">
+  <h1>Partibus</h1>
+</div>
+
+
+    <div data-role="content">
+{%if success%}
+Account created successfully.
+<p>
+<a href="/login/?next=/" data-role="button" data-inline="true" data-theme="a"  data-mini="true">Login</a>
+
+{%else%}
+
+      <span style="color:red">{{error}}</span>
+
+        <form action="" method="post">{% csrf_token %}
+          <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-mini="true">
+              <label for="textinput1">
+                Email
+              </label>
+              <input name="email" id="textinput1" placeholder="eg. joe@bloggs.com" value=""
+                     type="email">
+            </fieldset>
+          </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="textinput2">
+                        Password
+                    </label>
+                    <input name="password1" id="textinput2" placeholder="" value="" type="password">
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                    <label for="textinput3">
+                        Confirm Password
+                    </label>
+                    <input name="password2" id="textinput3" placeholder="" value="" type="password">
+                </fieldset>
+            </div>
+            <input type="submit" data-inline="true" data-theme="a" data-icon="check"
+            data-iconpos="left" value="Submit" data-mini="true">
+            <input type="submit" data-inline="true" data-icon="delete" data-iconpos="left"
+            value="Cancel" data-mini="true">
+        </form>
+    </div>
+{%endif%}
+</div>
+
+{% endblock %}

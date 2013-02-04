@@ -1,0 +1,39 @@
+<div data-role="popup" id="serverconfig" style="display: none;" >
+  <div data-role="content">
+    <form action="editserver/" method="post">{% csrf_token %}
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+	<label for="description">
+          Description
+	</label>
+        <input name="serverconfig_description" id="serverconfig_description" placeholder="eg. My Server" value="" type="text">
+      </fieldset>
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+	<label for="hostname">
+          Hostname
+	</label>
+	<input name="serverconfig_hostname" id="serverconfig_hostname" placeholder="eg. 192.168.1.2" value="" type="text">
+      </fieldset>
+    </div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" data-mini="true">
+	<label for="port">
+          Port Number
+	</label>
+        <input name="serverconfig_port" id="serverconfig_port" placeholder="eg. 19587">
+        <input type="hidden" name="serverconfig_id" id="serverconfig_id" value="-1">
+      </fieldset>
+    </div>
+   <!-- <input type="submit" value="Save">-->
+    <a data-role="button" data-inline="true" data-theme="a" href="#editserver" data-icon="check" data-iconpos="left">
+      Save
+    </a>
+    <a data-role="button" data-inline="true" href="#" data-rel="back" data-icon="delete" data-iconpos="left">
+      Cancel
+    </a>
+    </form>
+  </div>
+</div>
+

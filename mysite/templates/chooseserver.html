@@ -1,0 +1,31 @@
+<div data-role="header" data-position="fixed">
+  <h1>Partibus</h1>
+</div>
+
+<div data-role="content">	
+  <span id="disconnectmessage"></span>
+  <label for="selectmenu1">
+    Choose a server to connect with:
+  </label>
+  <select name="selectmenu1" id="serverselect">
+{% for server in servers %}
+	<option value="{{server.hostname}}:{{server.port}}">
+          {{server.description}}({{server.hostname}}:{{server.port}})
+    	</option>    
+{% endfor %}
+  </select>
+  <a href="/#connectserver" data-role="button"  data-theme="b" data-ajax="false" data-inline="true" onclick="" id="connectserver">Connect</a>
+  <a href="/logout" data-role="button" data-ajax="false" data-inline="true" data-theme="b">Logout</a>
+</div><!-- /content -->
+
+
+<div data-role="footer" data-position="fixed" data-id="persist_bar">
+  <div data-role="navbar" data-iconpos="left">
+    <ul>
+      <li><a href="#home" data-icon="home">Now Playing</a></li>
+      <li><a href="#library" data-icon="grid" class="ui-btn-active ui-state-persist">Library</a></li>
+      <li><a href="#account" data-icon="gear">Account</a></li>
+    </ul>
+  </div>
+</div>
+

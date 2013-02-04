@@ -1,0 +1,22 @@
+<div data-role="header" data-position="fixed">
+  <a href="#" data-icon="forward" onclick="skipSong();">Skip</a>
+  <h1>Now Playing</h1>
+  <a href="#youtube" data-icon="up" data-rel="dialog" data-transition="slidedown">Youtube</a>
+</div><!-- /header -->
+
+<div data-role="content">	
+  <h3>Now Playing:</h3> <span id="nowplaying"></span>
+  <br /> <br /> <br />
+  <ul data-role="listview" data-inset="false" tunelist="yes"></ul>		
+</div><!-- /content -->
+
+<div data-role="footer" data-position="fixed" data-id="persist_bar">
+  <div data-role="navbar" data-iconpos="left">
+    <ul>
+      <li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Now Playing</a></li>
+      <li><a href="#library" data-icon="grid">Library</a></li>
+      <li><a href="/account" data-icon="gear">Account</a></li>
+    </ul>
+  </div>
+</div>
+

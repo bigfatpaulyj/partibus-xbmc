@@ -1,0 +1,84 @@
+<div data-role="header" data-position="fixed">
+  <h1>Manage Account</h1>
+</div>
+
+<div data-role="content">	
+
+  <label for="selectmenu1">
+    Choose a server to connect with:
+  </label>
+  <select name="selectmenu1" id="serverselect">
+    {% for server in servers %}
+    <option value="{{server.hostname}}:{{server.port}}"> {{server.description}} ({{server.hostname}}:{{server.port}}) </option>
+    {% endfor %}
+  </select>
+
+  <a href="/#connectserver" data-role="button"  data-theme="a" data-ajax="false" data-inline="true" id="connectserver">Connect</a>
+  <a href="/logout" data-role="button" data-ajax="false" data-inline="true" data-theme="a">Logout</a>
+
+             
+
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="b">
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Change Password
+                        </h3>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <label for="textinput1">
+                                    Old password
+                                </label>
+                                <input id="textinput1" placeholder="" value="" type="text" />
+                            </fieldset>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <label for="textinput3">
+                                    New Password
+                                </label>
+                                <input id="textinput3" placeholder="" value="" type="password" />
+                            </fieldset>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <fieldset data-role="controlgroup" data-mini="true">
+                                <label for="textinput2">
+                                    Repeat new password
+                                </label>
+                                <input id="textinput2" placeholder="" value="" type="password" />
+                            </fieldset>
+                        </div>
+                        <a data-role="button" data-inline="true" data-transition="fade" href="#page1" data-icon="check" data-iconpos="left">
+                            Save
+                        </a>
+                    </div>
+                    <div data-role="collapsible" data-collapsed="true">
+                        <h3>
+                            Configure Servers
+                        </h3>
+                        <span id="#serverlist"></span>
+			<ul data-role="listview" data-divider-theme="c" data-inset="true">
+			  {% for server in servers %}
+			  <li data-theme="c">
+			    <a href="#serverconfig&edit={{server.id}}" data-position-to="window" data-rel="popup" >{{server.description}}</a>
+			  </li>
+			  {% endfor %}
+			</ul>
+			<a href="#serverconfig" data-role="button" data-position-to="window" data-rel="popup" data-inline="true" data-icon="plus">Add Server...</a>
+			{% include "serverconfig.html" %}                        
+                    </div>
+                </div>
+         
+
+
+</div><!-- /content -->
+
+<div data-role="footer" data-position="fixed" data-id="persist_bar">
+  <div data-role="navbar" data-iconpos="left">
+    <ul>
+      <li><a href="#home" data-icon="home">Now Playing</a></li>
+      <li><a href="#library" data-icon="grid">Library</a></li>
+      <li><a href="/account" data-icon="gear" class="ui-btn-active ui-state-persist">Account</a></li>
+    </ul>
+  </div>
+</div>
+

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block body %}
+
+<div data-role="page" id="login">
+<div data-role="header" data-position="fixed">
+  <h1>Partibus</h1>
+</div>
+
+<div data-role="content" align="center">	
+
+  <h2>Logged Out</h2>
+  Thank you for using Partibus
+  <p>
+  <a href="/login/?next=/" data-role="button" data-inline="true" data-theme="b">Log in again</a>
+  
+</div>
+
+<div data-role="footer" data-position="fixed" data-id="persist_bar">
+  <div data-role="navbar" data-iconpos="left">
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="script.partibus" version="0.1.0" name="Partibus" provider-name="paulfeatures">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Partibus DJ</summary>
+        <description>Allows democratic queuing of media.</description>
+        <platform>all</platform>
+    </extension>
+</addon>

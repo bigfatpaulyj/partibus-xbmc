@@ -1,0 +1,47 @@
+XBMC
+-----
+curl -d '{"id":"bjb7t3bw","jsonrpc":"2.0","method":"Files.GetSources","params":{"media":"music"}}' -u xbmc:password -v 127.0.0.1:8080/jsonrpc
+curl -d '{"id":"bjb7t3bw","jsonrpc":"2.0","method":"Player.Open","params":{"item":{"path":"/home/bigfatpaulyj/temp/xbmc/1.mp3"}}}' -u xbmc:password -v 127.0.0.1:8080/jsonrpc
+curl -d '{"id":"bjb7t3bw","jsonrpc":"2.0","method":"Files.GetDirectory","params":{"directory":"/home/bigfatpaulyj/Music/"}}' -u xbmc:password -v 127.0.0.1:8080/jsonrpc
+
+
+Plugin
+------
+curl -d '{"jsonrpc":"2.0","params":{"uri":"/home/bigfatpaulyj/Music/2.mp3","UID":"192.168.1.31"},"id":"bjb7t3bw","method":"play"}' http://ubuntu.local:8767/jsonrpc
+
+iphone-->eden2
+=============
+POST /jsonrpc HTTP/1.1
+Host: 192.168.1.31:8081
+User-Agent: Commander 1.3.8 (iPhone; iPhone OS 5.0.1; en_GB)
+Content-Length: 173
+Authorization: Basic eGJtYzpwYXNzd29yZA==
+Accept-Encoding: gzip
+Connection: close
+
+{"jsonrpc": "2.0", "method": "Playlist.Add", "params": {"playlistid": 1, "item": {"file": "plugin://plugin.video.youtube/?action=play_video&videoid=pIGgGV7uwU4"} }, "id": 1}HTTP/1.1 200 OK
+Content-Length: 38
+Content-Type: application/json
+Date: Wed, 01 Feb 2012 22:11:32 GMT
+{"id":1,"jsonrpc":"2.0","result":"OK"}
+
+android-->eden2
+===============
+GET /xbmcCmds/xbmcHttp?command=ExecBuiltin(PlayMedia%28plugin%3A%2F%2Fplugin.video.youtube%2F%3Fpath%3D%2Froot%2Fsearch%26action%3Dplay_video%26videoid%3DY8YhED4IgQA%29) HTTP/1.1
+Connection: close
+Authorization: Basic eGJtYzpwYXNzd29yZA==
+User-Agent: Dalvik/1.4.0 (Linux; U; Android 2.3.3; GT-I9100 Build/GINGERBREAD)
+Host: 192.168.1.31:8081
+Accept-Encoding: gzip
+
+HTTP/1.1 200 OK
+Content-Length: 22
+Date: Wed, 01 Feb 2012 22:10:17 GMT
+
+<html>
+<li>OK
+</html>
+
+Appears to work on Eden2
+------------------------
+curl --user xbmc:password -G  "http://ubuntu.local:8081/xbmcCmds/xbmcHttp?command=ExecBuiltin(PlayMedia(plugin%3A%2F%2Fplugin.video.youtube%2F%3Faction%3Dplay_video%26videoid%3DY8YhED4IgQA))"

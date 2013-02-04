@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label = ”General”>
+    <setting id="xbmcPort" type="text" label="XBMC Http Port number" default="8000" />
+    <setting id="pluginPort" type="text" label="Plugin Port number" default="19587" />
+  </category>
+</settings>
+
